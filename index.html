@@ -2,16 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ok</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <title>LOX</title>
 </head>
 <body>
-</body>
-<script src="bootstrap/js/jQuery.min.js"></script>
-<script src="bootstrap/js/popper.js"></script>
-<script src="bootstrap/js/bootstrap.js"></script>
-<script src="main.js"></script>
+  <div class="video-container">
+    <video autoplay muted loop class="fullscreen-video">
+      <source src="v.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+<audio id="myAudio" autoplay>
+  <source src="v.mp3" type="audio/mpeg">
+</audio>
 
+<p>
+  <button onclick="playAudio()"><source src="gg\v.mp4" type="video/mp4"></button>
+  <button onclick="pauseAudio()">Pause Audio</button>
+</p>
+
+<script>
+  function playAudio() {
+    var audio = document.getElementById("myAudio");
+    audio.play();
+  }
+
+  function pauseAudio() {
+    var audio = document.getElementById("myAudio");
+    audio.pause();
+  }
+</script>
+<style>
+.video-container {
+  position: relative;
+  width: 90%;
+  height: 100vh; /* Adjust this value as needed */
+}
+.fullscreen-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 80%;
+  min-height: 80%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+</style>
+</body>
 </html>
