@@ -1,52 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>LOX</title>
+  <meta charset="UTF-8">
+  <title>Play Audio on Video Click</title>
+  <style>
+    /* Your CSS styles here */
+  </style>
 </head>
 <body>
-  <div class="video-container">
-    <video autoplay muted loop class="fullscreen-video">
-      <source src=lv_0_20231128120226.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-<audio id="myAudio" autoplay>
-  <source src="v.mp3" type="audio/mpeg">
-</audio>
+  <video id="videoPlayer" controls>
+    <source src="gg\v.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<p>
-  <button onclick="playAudio()"><source src="gg\v.mp4" type="video/mp4"></button>
-  <button onclick="pauseAudio()">Pause Audio</button>
-</p>
+  <audio id="audioPlayer" src="gg\v.mp3"></audio>
 
-<script>
-  function playAudio() {
-    var audio = document.getElementById("myAudio");
-    audio.play();
-  }
+  <script>
+    const videoPlayer = document.getElementById('videoPlayer');
+    const audioPlayer = document.getElementById('audioPlayer');
 
-  function pauseAudio() {
-    var audio = document.getElementById("myAudio");
-    audio.pause();
-  }
-</script>
-<style>
-.video-container {
-  position: relative;
-  width: 90%;
-  height: 100vh; /* Adjust this value as needed */
-}
-.fullscreen-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 80%;
-  min-height: 80%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-</style>
+    videoPlayer.addEventListener('click', function() {
+      audioPlayer.play();
+    });
+  </script>
 </body>
 </html>
